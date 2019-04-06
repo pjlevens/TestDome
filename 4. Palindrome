@@ -1,0 +1,10 @@
+def is_palindrome(word):
+    word_lower = word.lower()
+    for i in range(len(word_lower)):
+        if (word_lower[i] == word_lower[-i-1]):
+            continue
+        else:
+            return False
+    return True
+    
+print(is_palindrome('Deleveled'))
