@@ -1,0 +1,28 @@
+import collections
+
+Node = collections.namedtuple('Node', ['left', 'right', 'value'])
+
+def contains(root, value):
+    # THIS WAS ONE OF MY FIRST ATTEMPTS - SCORED 33%
+    #if (value != root.value) and (root.left is None) and (root.right is None):
+    #    return False
+    #if (value in root) or (value in root.left) or (value in root.right):
+    #    return True
+    #return False    
+    if root is None:
+        return False
+    if value == root.value:
+        return True
+    elif value < root.value:
+        if contains(root.left,value) == True:
+            return True
+    elif value > root.value:
+        if contains(root.right,value) == True:
+            return True
+    return False
+        
+n1 = Node(value=1, left=None, right=None)
+n3 = Node(value=3, left=None, right=None)
+n2 = Node(value=2, left=n1, right=n3)
+        
+print(contains(n2, 3))
