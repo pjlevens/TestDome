@@ -1,0 +1,15 @@
+def group_by_owners(files):
+    grouped = {}
+    for key, owner in files.items():
+        if owner not in grouped.keys():
+            grouped[owner] = [key]
+        else:
+            grouped[owner] += [key]
+    return grouped
+    
+files = {
+    'Input.txt': 'Randy',
+    'Code.py': 'Stan',
+    'Output.txt': 'Randy'
+}   
+print(group_by_owners(files))
